@@ -170,7 +170,7 @@
                                     <div class="d-flex flex-column flex-lg-row align-items-center">
                                         <img 
                                             class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
-                                            src="@/assets/images/certs/c11.jpg" 
+                                            src="@/assets/images/certs/c12.jpg" 
                                             style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                         >
                                         <div class="p-3" style="flex: 1;">
