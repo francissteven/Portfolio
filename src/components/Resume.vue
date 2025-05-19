@@ -12,6 +12,7 @@
     import PHP from './icons/PHP.vue';
     import Vuejs from './icons/Vuejs.vue';
     import WebDevelopment from './icons/WebDevelopment.vue';
+    import WordPress from './icons/WordPress.vue';
 </script>
 <template>
     <div class="main">
@@ -134,6 +135,7 @@
                                         <Css/><GitGitHub/><HTML/>
                                         <Laravel/><Livewire/><MySQL/>
                                         <PHP/><Vuejs/><JavaScript/>
+                                        <WordPress/>
                                     </div>
                                 </div>
                             </div>

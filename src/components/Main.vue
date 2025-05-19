@@ -18,14 +18,22 @@ onMounted(() => {
     new Typed('#typed', options);
 });
 </script>
-
+<style scoped>
+.profile-logo {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    margin-left: 8px;
+}
+</style>
 <template>
     <div class="main" id="Home">
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white py-2">
             <div class="container px-5">
-                <a class="navbar-brand" href="#">
-                    <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span>
-                </a>
+                    <a class="navbar-brand" href="#Home">
+                        <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span>
+                        <img class="profile-logo ms-2" loading="eager" src="/favicon.png" />
+                    </a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -121,6 +129,14 @@ onMounted(() => {
                                     rel="noopener noreferrer"
                                 >
                                     <i class="bi bi-github"></i>
+                                </a>
+                                <a
+                                    class="text-gradient"
+                                    href="https://www.instagram.com/frncs_stvn"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <i class="bi bi-instagram"></i>
                                 </a>
                             </div>
                         </div>
