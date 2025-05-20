@@ -99,7 +99,7 @@ onMounted(() => {
                                 <span class="text-gradient d-inline">About Me</span>
                             </h2>
                             <p data-aos="fade-down" class="lead fw-light mb-2">
-                                Hi, I'm <strong>Francis Steven D. Almiñe</strong>, a
+                                I'm <strong>Francis</strong>, a
                                 <span id="typed"></span>.
                             </p>
                             <p data-aos="fade-down" class="text-muted">

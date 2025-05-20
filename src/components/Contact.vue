@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import emailjs from "@emailjs/browser";
 
 // Define reactive form state
 const form = ref({
@@ -9,20 +10,19 @@ const form = ref({
   message: "",
 });
 
+// Reference to the form element
+const formRef = ref(null);
+
 // Function to handle form submission
-const sendMail = (event) => {
-  event.preventDefault(); // Prevent default form submission
-
-  const params = {
-    name: form.value.name,
-    subject: form.value.subject,
-    email: form.value.email,
-    message: form.value.message,
-  };
-
+const sendMail = () => {
   emailjs
-    .send("service_jng6yhp", "template_lkjh7rr", params)
-    .then((response) => {
+    .sendForm(
+      "service_jng6yhp",
+      "template_lkjh7rr",
+      formRef.value,
+      { publicKey: "8xCFavoHcMudi6ACP" }
+    )
+    .then(() => {
       alert("Email sent successfully!");
       // Clear the form
       form.value = {
@@ -31,6 +31,7 @@ const sendMail = (event) => {
         email: "",
         message: "",
       };
+      formRef.value.reset();
     })
     .catch((error) => {
       alert("Failed to send email. Please try again later.");
@@ -54,76 +55,56 @@ const sendMail = (event) => {
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
-                            <form id="contactForm" @submit="sendMail">
-                                <div
-                                data-aos="fade-right"
-                                data-aos-duration="2000"
-                                class="form-floating mb-3"
-                                >
-                                <input
-                                    v-model="form.name"
-                                    class="form-control"
-                                    id="name"
-                                    type="text"
-                                    placeholder="Enter your name..."
-                                />
-                                <label for="name">Full name</label>
+                            <form id="contactForm" ref="formRef" @submit.prevent="sendMail">
+                                <div data-aos="fade-right" data-aos-duration="2000" class="form-floating mb-3">
+                                    <input
+                                        v-model="form.name"
+                                        class="form-control"
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Enter your name..."
+                                    />
+                                    <label for="name">Full name</label>
                                 </div>
-                                <div
-                                data-aos="fade-right"
-                                data-aos-duration="3000"
-                                class="form-floating mb-3"
-                                >
-                                <input
-                                    v-model="form.subject"
-                                    class="form-control"
-                                    id="subject"
-                                    type="text"
-                                    placeholder="Enter your subject.."
-                                />
-                                <label for="subject">Subject</label>
+                                <div data-aos="fade-right" data-aos-duration="3000" class="form-floating mb-3">
+                                    <input
+                                        v-model="form.subject"
+                                        class="form-control"
+                                        id="subject"
+                                        name="subject"
+                                        type="text"
+                                        placeholder="Enter your subject.."
+                                    />
+                                    <label for="subject">Subject</label>
                                 </div>
-                                <div
-                                data-aos="fade-right"
-                                data-aos-duration="4000"
-                                class="form-floating mb-3"
-                                >
-                                <input
-                                    v-model="form.email"
-                                    class="form-control"
-                                    id="email"
-                                    type="email"
-                                    placeholder="name@example.com"
-                                />
-                                <label for="email">Email address</label>
+                                <div data-aos="fade-right" data-aos-duration="4000" class="form-floating mb-3">
+                                    <input
+                                        v-model="form.email"
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="name@example.com"
+                                    />
+                                    <label for="email">Email address</label>
                                 </div>
-                                <div
-                                data-aos="fade-right"
-                                data-aos-duration="5000"
-                                class="form-floating mb-3"
-                                >
-                                <textarea
-                                    v-model="form.message"
-                                    class="form-control"
-                                    id="message"
-                                    type="text"
-                                    placeholder="Enter your message here..."
-                                    style="height: 10rem"
-                                ></textarea>
-                                <label for="message">Message</label>
+                                <div data-aos="fade-right" data-aos-duration="5000" class="form-floating mb-3">
+                                    <textarea
+                                        v-model="form.message"
+                                        class="form-control"
+                                        id="message"
+                                        name="message"
+                                        type="text"
+                                        placeholder="Enter your message here..."
+                                        style="height: 10rem"
+                                    ></textarea>
+                                    <label for="message">Message</label>
                                 </div>
-                                <div
-                                data-aos="fade-right"
-                                data-aos-duration="6000"
-                                class="d-grid"
-                                >
-                                <button
-                                    class="btn btn-primary btn-lg"
-                                    id="submitButton"
-                                    type="submit"
-                                >
-                                    Submit
-                                </button>
+                                <div data-aos="fade-right" data-aos-duration="6000" class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">
+                                        Submit
+                                    </button>
                                 </div>
                             </form>
                         </div>
