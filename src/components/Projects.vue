@@ -1,4 +1,13 @@
 <script setup>
+import { onMounted, nextTick } from 'vue';
+import { Tooltip } from 'bootstrap/dist/js/bootstrap.bundle';
+
+onMounted(() => {
+  nextTick(() => {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(el => new Tooltip(el));
+  });
+});
 </script>
 <template>
     <div class="main">
@@ -29,21 +38,34 @@
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="PHP"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Sass"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -66,21 +88,33 @@
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg" 
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Alpine.js"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" 
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain-wordmark.svg"
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="CodeIgniter"
                                         >
                                         <img 
                                             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
                                             class="img-fluid me-1" 
                                             style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
                                         >
                                     </div>
                                 </div>
@@ -102,13 +136,25 @@
                                         </p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Laravel"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -129,13 +175,25 @@
                                         </p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="PHP"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -156,16 +214,32 @@
                                         </p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/alpinejs/alpinejs-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Alpine.js"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Laravel"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -186,16 +260,32 @@
                                         </p>
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Bootstrap"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Laravel"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/livewire/livewire-original.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="Livewire"
+                                        >
                                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" 
                                             class="img-fluid me-1" 
-                                            style="width:30px;height:30px;">
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="MySQL"
+                                        >
                                     </div>
                                 </div>
                             </div>
