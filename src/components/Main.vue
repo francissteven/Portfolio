@@ -117,18 +117,16 @@ body.dark-mode .form-floating > label {
                         <li class="nav-item"><a class="nav-link text-primary" href="#Projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link text-primary" href="#Certificates">Certificates</a></li>
                         <li class="nav-item"><a class="nav-link text-primary" href="#Contact">Contact</a></li>
-                        <li class="nav-item d-flex align-items-center">
-                            <button
-                                class="theme-toggle-btn"
-                                :aria-label="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
-                                @click="toggleTheme"
-                            >
-                                <i v-if="theme === 'light'" class="bi bi-moon-stars"></i>
-                                <i v-else class="bi bi-sun"></i>
-                            </button>
-                        </li>
                     </ul>
                 </div>
+                <button
+                    class="theme-toggle-btn"
+                    :aria-label="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
+                    @click="toggleTheme"
+                >
+                    <i v-if="theme === 'light'" class="bi bi-moon-stars"></i>
+                    <i v-else class="bi bi-sun"></i>
+                </button>
             </div>
         </nav>
         <header class="py-5 mt-5">
