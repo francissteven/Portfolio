@@ -1,4 +1,16 @@
 <script setup>
+    import { onMounted } from 'vue';
+    import { gsap } from 'gsap';
+    
+    onMounted(() => {
+        gsap.to('.profile-img', {
+            y: -20,
+            repeat: -1,
+            yoyo: true,
+            duration: 2,
+            ease: 'power1.inOut'
+        });
+    });
 </script>
 <template>
     <div class="main">
@@ -7,6 +19,7 @@
                     <div class="text-center mb-5">
                         <h1 data-aos="fade-down" class="display-5 fw-bolder mb-0">
                             <span class="text-gradient d-inline" id="Certificates">Certifications</span>
+                            <img class="profile-img" width="100" height="150" loading="eager" src="@/assets/images/me.png" />
                         </h1>
                     </div>
 
