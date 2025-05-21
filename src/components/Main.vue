@@ -1,8 +1,25 @@
 <script setup>
 import Typed from 'typed.js';
-import { onMounted } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
-// Initialize Typed.js after the DOM is mounted
+// Theme state
+const theme = ref(localStorage.getItem('theme') || 'light');
+
+// Apply theme to body
+const applyTheme = () => {
+    document.body.classList.toggle('dark-mode', theme.value === 'dark');
+    localStorage.setItem('theme', theme.value);
+};
+
+// Watch for theme changes
+watch(theme, applyTheme, { immediate: true });
+
+// Toggle theme
+const toggleTheme = () => {
+    theme.value = theme.value === 'light' ? 'dark' : 'light';
+};
+
+// Typed.js
 onMounted(() => {
     const options = {
         strings: [
@@ -25,15 +42,63 @@ onMounted(() => {
     object-fit: cover;
     margin-left: 8px;
 }
+/* Theme toggle button style */
+.theme-toggle-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+</style>
+<style>
+/* Global dark mode styles */
+body.dark-mode {
+    background-color: #181a1b !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode .bg-light {
+    background-color: #23272b !important;
+}
+body.dark-mode .bg-white {
+    background-color: #23272b !important;
+}
+body.dark-mode .navbar,
+body.dark-mode .navbar-light {
+    background-color: #23272b !important;
+}
+body.dark-mode .text-muted {
+    color: #b0b3b8 !important;
+}
+body.dark-mode .card {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+}
+body.dark-mode .form-control {
+    background-color: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444;
+}
+body.dark-mode .btn-outline-dark {
+    color: #f1f1f1;
+    border-color: #f1f1f1;
+}
+body.dark-mode .btn-outline-dark:hover {
+    background-color: #f1f1f1;
+    color: #23272b;
+}
+body.dark-mode .form-floating > label {
+    color: #b0b3b8 !important;
+}
 </style>
 <template>
     <div class="main" id="Home">
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white py-2">
             <div class="container px-5">
-                    <a class="navbar-brand" href="#Home">
-                        <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span>
-                        <img class="profile-logo ms-2" loading="eager" src="/favicon.png" />
-                    </a>
+                <a class="navbar-brand" href="#Home">
+                    <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span>
+                    <img class="profile-logo ms-2" loading="eager" src="/favicon.png" />
+                </a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -47,11 +112,21 @@ onMounted(() => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Resume">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Certificates">Certificates</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="#Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="#Resume">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="#Projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="#Certificates">Certificates</a></li>
+                        <li class="nav-item"><a class="nav-link text-primary" href="#Contact">Contact</a></li>
+                        <li class="nav-item d-flex align-items-center">
+                            <button
+                                class="theme-toggle-btn"
+                                :aria-label="theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'"
+                                @click="toggleTheme"
+                            >
+                                <i v-if="theme === 'light'" class="bi bi-moon-stars"></i>
+                                <i v-else class="bi bi-sun"></i>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
