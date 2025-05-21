@@ -11,7 +11,7 @@
     });
 
     onMounted(() => {
-        gsap.to('.profile-img', {
+        gsap.to('.profile-image', {
             y: -20,
             repeat: -1,
             yoyo: true,
@@ -27,7 +27,7 @@
                 <div class="text-center mb-5">
                     <h1 data-aos="fade-down" class="display-5 fw-bolder mb-0">
                         <span class="text-gradient d-inline" id="Projects">Projects</span>
-                        <img class="profile-img" width="100" height="150" loading="eager" src="@/assets/images/me.png" />
+                        <img class="profile-image" width="100" height="150" loading="eager" src="@/assets/images/me.png" />
                     </h1>
                 </div>
                 <div class="row gx-5 justify-content-center">
