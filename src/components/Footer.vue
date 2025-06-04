@@ -9,7 +9,7 @@
                 <span>and Vue.js</span>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="20" height="20" title="Vue.js" />
             </div>
-            <p class="text-center text-body-primary">&copy; 2025 Francis Steven D. Almiñe</p>
+            <p class="text-center text-body-primary">&copy; {{ new Date().getFullYear() }} Francis Steven D. Almiñe</p>
         </footer>
     </div>
 </template>
