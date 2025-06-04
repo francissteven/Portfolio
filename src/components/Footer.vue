@@ -13,3 +13,9 @@
         </footer>
     </div>
 </template>
+
+<style scoped>
+.main {
+  overflow-x: hidden;
+}
+</style>
