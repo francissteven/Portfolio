@@ -18,12 +18,6 @@ import AOS from 'aos';
 // Initialize the Vue app
 const app = createApp(App);
 
-// Initialize Bootstrap tooltips
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(
-  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-);
-
 // Initialize AOS animations
 AOS.init();
 

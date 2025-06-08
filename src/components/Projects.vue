@@ -5,8 +5,14 @@
 
     onMounted(() => {
         nextTick(() => {
+            // Only initialize tooltips if not already initialized globally
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-            tooltipTriggerList.forEach(el => new Tooltip(el));
+            if (tooltipTriggerList.length > 0 && !tooltipTriggerList[0].hasAttribute('data-tooltip-init')) {
+                tooltipTriggerList.forEach(el => {
+                    new Tooltip(el);
+                    el.setAttribute('data-tooltip-init', 'true');
+                });
+            }
         });
     });
 
@@ -39,6 +45,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p1.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
@@ -89,6 +96,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p2.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
@@ -139,6 +147,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p3.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
@@ -178,6 +187,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p4.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
@@ -217,6 +227,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p5.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
@@ -263,6 +274,7 @@
                                         class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
                                         src="@/assets/images/projects/p6.jpg" 
                                         alt="Project Image" 
+                                        loading="lazy"
                                         style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
                                     >
                                     <div class="p-3" style="flex: 1;">
