@@ -37,8 +37,8 @@ onMounted(() => {
 </script>
 <style scoped>
 .profile-logo {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
     margin-left: 8px;
 }
@@ -96,8 +96,8 @@ body.dark-mode .form-floating > label {
         <nav class="fixed-top navbar navbar-expand-lg navbar-light bg-white py-2">
             <div class="container px-5">
                 <a class="navbar-brand" href="#Home">
-                    <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span>
-                    <img class="profile-logo ms-2" loading="eager" src="/favicon.png" />
+                    <!-- <span class="fw-bolder text-primary">Francis Steven D. Almiñe</span> -->
+                    <img class="profile-logo ms-2" loading="eager" src="/dist/logo.png" />
                 </a>
                 <button
                     class="navbar-toggler"
