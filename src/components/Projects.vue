@@ -314,6 +314,32 @@
                                 </div>
                             </div>
                         </div>
+                        <div data-aos="zoom-in" class="card overflow-hidden shadow-lg rounded-5 border-0 mb-5" style="background-color: #f7f7f7;">
+                            <div class="card-body p-4">
+                                <div class="d-flex flex-column flex-lg-row align-items-center">
+                                    <img 
+                                        class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0" 
+                                        src="@/assets/images/projects/p7.jpg" 
+                                        alt="Project Image" 
+                                        loading="lazy"
+                                        style="width: 100%; max-width: 300px; height: auto; object-fit: cover;"
+                                    >
+                                    <div class="p-3" style="flex: 1;">
+                                        <h4 class="fw-bold text-primary mb-2">Personal Project</h4>
+                                        <p>Portfolio Website 
+                                            <i class="text-secondary">(link under construction)</i>
+                                        </p>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg" 
+                                            class="img-fluid me-1" 
+                                            style="width:30px;height:30px;"
+                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                            data-bs-custom-class="custom-tooltip"
+                                            data-bs-title="WordPress"
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>                
